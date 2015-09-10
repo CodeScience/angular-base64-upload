@@ -99,7 +99,11 @@
 
           function _setViewValue () {
               var newVal = attrs.multiple ? fileObjects : fileObjects[0];
-              ngModel.$setViewValue(newVal);
+              var modelValue = ngModel.$modelValue || [];
+              modelValue = modelValue.concat(newVal);
+              
+              
+              ngModel.$setViewValue(modelValue);
               if (angular.isFunction(ngModel.$validate)) {
                 ngModel.$validate();
               }
