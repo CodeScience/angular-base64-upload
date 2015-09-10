@@ -131,6 +131,7 @@
               fileObject.filetype = file.type;
               fileObject.filename = file.name;
               fileObject.filesize = file.size;
+              fileObject.origin = 'Desktop';
 
               _attachEventHandlers(reader, file, fileObject);
 
